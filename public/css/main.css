@@ -1,31 +1,180 @@
-html,
-body {
-    background-color: lightblue;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+* {
+    box-sizing: border-box;
 }
 
 body {
-    nav {
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    background-color: #f4f7f6;
+}
 
-        li {
-            display: inline;
-            margin-right: 15px;
-        }
+/* ============
+    Navigation
+============== */
+nav {
+    background-color: #164e63;
+    padding: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
 
-        a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-            &:hover {
-                color: #0066cc;
-            }
-        }
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 0.65rem 1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #0e7490;
+}
+
+nav a:focus {
+    outline: 3px solid #facc15;
+    outline-offset: 2px;
+}
+
+
+/* ====================
+    Main Content
+    =================== */
+main {
+    width: min(90%, 1000px);
+    margin: 0 auto;
+    padding: 3rem 0;
+    min-height: calc(100vh - 140px);
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #164e63;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    margin-top: 2rem;
+    color: #155e75;
+    font-size: 1.6rem;
+}
+
+p {
+    max-width: 750px;
+    margin-bottom: 1.5rem;
+}
+
+
+/* ====================
+    Home Page
+    =================== */
+.main-logo {
+    display: block;
+    width: min(100%, 500px);
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ====================
+    List
+    =================== */
+main ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+main li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: #ffffff;
+    border-left: 5px solid #0e7490;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ====================
+    Organization Images
+    =================== */
+main li img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 1rem;
+    border-radius: 6px;
+}
+
+main li strong {
+    color: #164e63;
+}
+
+/* ====================
+    Footer
+    =================== */
+footer {
+    padding: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    background-color: #0f172a;
+}
+
+footer p {
+    margin: 0 auto;
+    font-size: 0.9rem;
+}
+
+
+/* ====================
+    Responsive Design
+    =================== */
+@media(max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+
+    main {
+        width: 90%;
+        padding: 2rem 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    main li img {
+        display: block;
+        margin: 0 auto 0.75rem;
     }
 }
