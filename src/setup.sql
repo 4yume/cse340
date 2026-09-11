@@ -75,3 +75,43 @@ VALUES
 (3, 'Charity Event Support',
  'Help organize and support a local charity event.',
  'Nashville, Tennessee', '2026-10-16');
+
+
+
+ /* category */
+ CREATE TABLE category(
+category_id SERIAL PRIMARY KEY,
+name VARCHAR(150) NOT NULL UNIQUE
+);
+
+INSERT INTO category(name)
+VALUES
+('Environmental'),
+('Educational'),
+('Community Service');
+
+CREATE TABLE project_category(
+project_id INT NOT NULL,
+category_id INT NOT NULL,
+PRIMARY KEY (project_id, category_id),
+FOREIGN KEY (project_id) REFERENCES project(project_id),
+FOREIGN KEY (category_id) REFERENCES category(category_id)
+);
+
+INSERT INTO project_category(project_id, category_id)
+VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 1),
+(5, 2),
+(6, 3),
+(7, 1),
+(8, 2),
+(9, 3),
+(10, 1),
+(11, 2),
+(12, 3),
+(13, 1),
+(14, 2),
+(15, 3);
