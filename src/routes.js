@@ -14,6 +14,6 @@ router.get('/projects', showProjectsPage);
 router.get('/categories', showCategoriesPage);
 
 // error-handling routes
-router.get('/ test-error', testErrorPage);
+router.get('/test-error', testErrorPage);
 
 export default router;
