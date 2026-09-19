@@ -1,30 +1,34 @@
-<main>
-    <h1>
-        <%= project.title %>
-    </h1>
+<%- include('partials/header') %>
 
-    <p>
-        <%= project.description %>
-    </p>
+    <main>
+        <h1>
+            <%= project.title %>
+        </h1>
 
-    <p>
-        Date: <%= new Date(project.date).toLocaleDateString('en-US', { year: 'numeric' , month: 'long' , day: 'numeric'
-            }) %>
-    </p>
+        <p>
+            <%= project.description %>
+        </p>
 
-    <p>Location: <%= project.location %>
-    </p>
+        <p>
+            Date: <%= new Date(project.date).toLocaleDateString('en-US', { year: 'numeric' , month: 'long' ,
+                day: 'numeric' }) %>
+        </p>
 
-    <p>
-        Category:
-        <% categories.forEach(category=> { %>
-            <a href="/category/<%= category.category_id %>">
-                <%= category.name %>
-            </a>
-            <% }) %>
-    </p>
+        <p>Location: <%= project.location %>
+        </p>
 
-    <p>Organization: <a href="/organization/<%= project.organization_id %>">
-            <%= project.organization_name %>
-        </a></p>
-</main>
+        <p>
+            Category:
+            <% categories.forEach(category=> { %>
+                <a href="/category/<%= category.category_id %>">
+                    <%= category.name %>
+                </a>
+                <% }) %>
+        </p>
+
+        <p>Organization: <a href="/organization/<%= project.organization_id %>">
+                <%= project.organization_name %>
+            </a></p>
+    </main>
+
+    <%- include('partials/footer') %>
