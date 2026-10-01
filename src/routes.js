@@ -30,7 +30,7 @@ import {
     processEditCategoryForm
 } from './controllers/categories.js';
 import { testErrorPage } from './controllers/errors.js';
-import { requireRole, showUserRegistrationForm, processUserRegistrationForm, showLoginForm, processLoginForm, processLogout, showDashboard, requireLogin } from './controllers/users.js';
+import { requireRole, showUserRegistrationForm, processUserRegistrationForm, showLoginForm, processLoginForm, processLogout, showDashboard, requireLogin, showAllUsers } from './controllers/users.js';
 
 
 const router = express.Router();
@@ -99,5 +99,8 @@ router.get('/logout', processLogout);
 
 // Protected dashboard route
 router.get('/dashboard', requireLogin, showDashboard);
+
+// Show all users
+router.get('/users', requireRole('admin'), showAllUsers);
 
 export default router;

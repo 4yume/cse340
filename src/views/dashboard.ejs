@@ -6,10 +6,13 @@
         </h1>
 
         <h2>Dashboard</h2>
-        <p>Name: <%= name %>
-        </p>
-        <p>Username: <%= email %>
-        </p>
+        <p>Name: <%= name %></p>
+        <p>Username: <%= email %></p>
+
+
+        <% if (user && user.role_name==='admin' ) { %>
+            <a href="/users">View All Users</a>
+        <% } %>
     </main>
 
     <%- include('partials/footer') %>
